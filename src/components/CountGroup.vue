@@ -1,22 +1,19 @@
 <template>
-  <div id="app">
-    <input type="text" v-model="counterNum" />
-    <counter-group :counterNum="parseInt(counterNum) || 0"></counter-group>
+  <div >
+    <counter v-for="count in counterNum" v-bind:key="count"></counter>
   </div>
 </template>
 
 <script>
-import CounterGroup from "./components/CountGroup.vue";
+import Counter from "./Counter.vue";
 
 export default {
-  name: 'app',
-  components: {
-    CounterGroup,
+  name: 'CountGroup',
+  props: {
+      counterNum: Number,
   },
-  data(){
-    return {
-      counterNum: 0
-    }
+  components: {
+    Counter,
   }
 }
 </script>

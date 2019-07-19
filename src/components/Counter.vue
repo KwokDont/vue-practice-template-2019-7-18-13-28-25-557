@@ -1,23 +1,28 @@
 <template>
-  <div id="app">
-    <input type="text" v-model="counterNum" />
-    <counter-group :counterNum="parseInt(counterNum) || 0"></counter-group>
+  <div>
+    <button v-on:click="decrease">-</button>
+    <span>{{count}}</span>
+    <button v-on:click="increase">+</button>
   </div>
 </template>
 
 <script>
-import CounterGroup from "./components/CountGroup.vue";
 
 export default {
-  name: 'app',
-  components: {
-    CounterGroup,
-  },
+  name: 'Counter',
   data(){
-    return {
-      counterNum: 0
+    return{
+      count:0,
     }
-  }
+  },
+  methods: {
+    decrease(){
+      this.count--; 
+    },
+    increase(){
+      this.count++; 
+    }
+  },
 }
 </script>
 
