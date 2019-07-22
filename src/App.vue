@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <div><label>sum:</label>{{sum}}</div>
     <input type="text" v-model="counterNum" />
     <counter-group :counterNum="parseInt(counterNum) || 0"></counter-group>
   </div>
@@ -16,6 +17,11 @@ export default {
   data(){
     return {
       counterNum: 0
+    }
+  },
+  computed:{
+    sum(){
+      return this.$store.state.sum;
     }
   }
 }

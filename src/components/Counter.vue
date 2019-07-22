@@ -18,9 +18,11 @@ export default {
   methods: {
     decrease(){
       this.count--; 
+      this.$store.commit('decrease');
     },
     increase(){
       this.count++; 
+      this.$store.commit('increment');
     }
   },
 }
